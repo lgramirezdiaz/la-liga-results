@@ -6,7 +6,7 @@
     margin-top: 40px;
   }
 </style>
-<title>Editar Partido</title>
+<title>Editar Equipo</title>
 <div class="card uper">
   <div class="card-header">
     Editar Partido

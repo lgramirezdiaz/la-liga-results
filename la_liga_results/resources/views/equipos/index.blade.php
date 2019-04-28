@@ -6,7 +6,7 @@
     margin-top: 40px;
   }
 </style>
-<title>Partidos</title>
+<title>Equipos</title>
 <div class="uper">
   @if(session()->get('success'))
     <div class="alert alert-success">
