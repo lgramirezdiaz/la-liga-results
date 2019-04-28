@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('partidos', 'PartidosController');
+Route::resource('equipos', 'EquiposController');
