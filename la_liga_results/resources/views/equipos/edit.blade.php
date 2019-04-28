@@ -21,12 +21,12 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('equipos.update', $equipo->id) }}">
+      <form method="post" action="{{ route('equipos.update', $equipo->Nombre) }}">
         @method('PATCH')
         @csrf
         <div class="form-group">
           <label for="name">Nombre</label>
-          <input type="text" class="form-control" name="nombre" value={{ $equipo->Nombre }} />
+          <input type="text" class="form-control" name="nombre" value={{ $equipo->Nombre }} readonly />
         </div>
         <div class="form-group">
           <label for="price">Latitud</label>

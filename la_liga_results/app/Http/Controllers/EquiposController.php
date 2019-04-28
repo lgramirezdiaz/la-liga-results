@@ -88,7 +88,7 @@ class EquiposController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $Nombre)
     {
         //
         $request->validate([
@@ -97,8 +97,8 @@ class EquiposController extends Controller
             'longitud' => 'required',
           ]);
 
-          $equipo = Equipo::find($id);
-            $equipo->Nombre = $request->get('nombre');
+          $equipo = Equipo::find($Nombre);
+           // $equipo->Nombre = $request->get('nombre');
             $equipo->Latitud= $request->get('latitud');
             $equipo->Longitud= $request->get('longitud');
             

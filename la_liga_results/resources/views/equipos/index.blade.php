@@ -34,9 +34,9 @@
             <td>{{$equipo->Nombre}}</td>
             <td>{{$equipo->Latitud}}</td>
             <td>{{$equipo->Longitud}}</td>
-            <td><a href="{{ route('equipos.edit',$equipo->id)}}" class="btn btn-primary">Editar</a></td>
+            <td><a href="{{ route('equipos.edit',$equipo->Nombre)}}" class="btn btn-primary">Editar</a></td>
             <td>
-                <form action="{{ route('equipos.destroy', $equipo->id)}}" method="post">
+                <form action="{{ route('equipos.destroy', $equipo->Nombre)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Eliminar</button>
