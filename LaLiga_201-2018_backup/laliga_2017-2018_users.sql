@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `laliga_2017-2018` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `laliga_2017-2018`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: laliga_2017-2018
@@ -56,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-27 22:06:28
+-- Dump completed on 2019-04-28 12:11:27

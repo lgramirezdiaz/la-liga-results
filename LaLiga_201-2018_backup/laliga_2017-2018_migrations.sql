@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `laliga_2017-2018` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `laliga_2017-2018`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: laliga_2017-2018
@@ -29,7 +27,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +36,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_04_27_172648_create_partidos_table',2),(4,'2019_04_28_024047_create_equipos_table',3),(5,'2019_04_28_024329_create_equipos_table',4);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_04_27_172648_create_partidos_table',2),(4,'2019_04_28_024047_create_equipos_table',3),(5,'2019_04_28_024329_create_equipos_table',4),(6,'2019_04_28_163212_create_equipos',5),(7,'2019_04_28_163401_create_partidos',6),(8,'2019_04_28_173731_create_equipos',7),(9,'2019_04_28_173830_create_partidos',8);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-27 22:06:27
+-- Dump completed on 2019-04-28 12:11:27
