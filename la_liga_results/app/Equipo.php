@@ -14,4 +14,12 @@ class Equipo extends Model
         'Latitud',
         'Longitud'
       ];
+
+      public function partidos()
+      {
+
+        $local = $this->hasMany('App\Partido','Local');
+        $visita = $this->hasMany('App\Partido','Visita');
+        return  $local->union($visita)->orderBy('Jornada','ASC');;
+      }
 }
