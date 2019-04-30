@@ -13,10 +13,11 @@ class EquiposController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
-        $equipos = Equipo::all();
+        $equipos = Equipo::orderBy('id', 'asc') -> get();
 
         return view('equipos.index', compact('equipos'));
     }
@@ -119,5 +120,20 @@ class EquiposController extends Controller
         $equipo = Equipo::find($id);
         $equipo->delete();
         return redirect('/equipos')->with('success', 'Equipo eliminado correctamente');
+    }
+
+    /**
+     * 
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     * 
+     * 
+     */
+    
+    public function showMatches($id){
+        // Esta funcion recibe el id del equipo y extrae todos los equipos.
+        $partidos =  Equipo:: find($id) -> partidos;
+        return view( 'partidos.match', compact('partidos') );
+
     }
 }

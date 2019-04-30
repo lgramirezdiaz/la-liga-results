@@ -16,7 +16,6 @@ class PartidosController extends Controller
     public function index()
     {
         $partidos = Partido::all();
-
         return view('partidos.index', compact('partidos'));
     }
 
@@ -47,6 +46,7 @@ class PartidosController extends Controller
             'goles_local' => 'required|integer',
             'goles_visita' => 'required|integer',
           ]);
+
           $partido = new Partido([
             'Jornada' => $request->get('jornada'),
             'Fecha'=> $request->get('fecha'),
@@ -56,6 +56,7 @@ class PartidosController extends Controller
             'GolesVisita'=> $request->get('goles_visita')
           ]);
           $partido->save();
+          
           return redirect('/partidos')->with('success', 'Partido ingresado correctamente');
     }
 

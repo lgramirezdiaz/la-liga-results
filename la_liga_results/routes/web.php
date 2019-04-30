@@ -14,5 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// ==> Utilizo resource para que el me realice los métodos básicos CRUD. 
+
 Route::resource('partidos', 'PartidosController');
 Route::resource('equipos', 'EquiposController');
+
+// ==> Enruto métodos especificos. 
+
+Route::get('partidos/{id}', 'EquiposController@showMatches');
