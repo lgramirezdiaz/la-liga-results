@@ -132,7 +132,7 @@ class EquiposController extends Controller
     public function showMatches($name){
         // Esta funcion recibe el nombre del equipo y extrae todos los partidos del equipo.
         $partidos =  Equipo:: find($name) -> partidos;
-        return view( 'partidos.match', compact('partidos') );
+        return view ( 'partidos.match', compact('partidos') );
 
     }
 }

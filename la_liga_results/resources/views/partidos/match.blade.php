@@ -1,10 +1,10 @@
 @extends('layout')
 @section('content')
 
-
+<script src="{{ URL::asset('js/partidosJS/match.js') }}"></script>
+<script src="https://unpkg.com/ag-grid-enterprise@20.2.0/dist/ag-grid-enterprise.min.js"></script>
 <title> Partidos específicos </title>
-
-<table class="table table-striped">
+<!-- <table class="table table-striped">
     <thead class="thead-light">
         <tr>
             <td colspan="6" align="center"><strong>Partidos</strong></td>
@@ -37,6 +37,20 @@
 
 
 </table>
+
+-->
+
+<div id="myGrid" style="height: 750px;" class="ag-theme-material"></div>
+<div class="row">
+    <div class = "col-md-12">
+        <div id="myGrid" style="height: 100%;" class="ag-theme-material"></div>
+    </div>
+</div>
+<script>
+    rowsData = '{!! $partidos !!}';
+    initialize();
+</script>
+
 
 
 @endsection
