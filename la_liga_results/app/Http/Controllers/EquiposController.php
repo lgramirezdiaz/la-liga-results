@@ -78,7 +78,6 @@ class EquiposController extends Controller
     {
         //
         $equipo = Equipo::find($id);
-
         return view('equipos.edit', compact('equipo'));
     }
 

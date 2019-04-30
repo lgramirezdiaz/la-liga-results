@@ -26,15 +26,15 @@
         @csrf
         <div class="form-group">
           <label for="name">Nombre</label>
-          <input type="text" class="form-control" name="nombre" value={{ $equipo->Nombre }} readonly />
+          <input type="text" class="form-control" name="nombre" value= "{{ $equipo->Nombre }}" readonly />
         </div>
         <div class="form-group">
           <label for="price">Latitud</label>
-          <input type="text" class="form-control" name="latitud" value={{ $equipo->Latitud }} />
+          <input type="text" class="form-control" name="latitud" value= "{{ $equipo->Latitud }}" />
         </div>
         <div class="form-group">
           <label for="quantity">Longitud:</label>
-          <input type="text" class="form-control" name="longitud" value={{ $equipo->Longitud }} />
+          <input type="text" class="form-control" name="longitud" value= "{{ $equipo->Longitud }}" />
         </div>            
         <button type="submit" class="btn btn-primary">Actualizar</button>
       </form>

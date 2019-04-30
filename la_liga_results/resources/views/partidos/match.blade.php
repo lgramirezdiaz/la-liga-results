@@ -4,10 +4,10 @@
 
 <title> Partidos específicos </title>
 
-<table class="table">
-    <thead>
+<table class="table table-striped">
+    <thead class="thead-light">
         <tr>
-            <td colspan="6" align="center">Partidos</td>
+            <td colspan="6" align="center"><strong>Partidos</strong></td>
         </tr>
         <tr>
             <th>Jornada</th>
