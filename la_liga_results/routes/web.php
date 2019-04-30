@@ -22,4 +22,7 @@ Route::resource('equipos', 'EquiposController');
 
 // ==> Enruto métodos especificos. 
 
-Route::get('partidos/{id}', 'EquiposController@showMatches');
+Route::get('equipos/partidos/{name}', [
+    'as' => 'equipos.match', 'uses' => 'EquiposController@showMatches'
+]);
+

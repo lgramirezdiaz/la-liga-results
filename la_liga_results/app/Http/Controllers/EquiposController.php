@@ -124,15 +124,15 @@ class EquiposController extends Controller
 
     /**
      * 
-     * @param int $id
+     * @param string $name
      * @return \Illuminate\Http\Response
-     * 
+     * $name is de full name of the team.
      * 
      */
     
-    public function showMatches($id){
-        // Esta funcion recibe el id del equipo y extrae todos los equipos.
-        $partidos =  Equipo:: find($id) -> partidos;
+    public function showMatches($name){
+        // Esta funcion recibe el nombre del equipo y extrae todos los partidos del equipo.
+        $partidos =  Equipo:: find($name) -> partidos;
         return view( 'partidos.match', compact('partidos') );
 
     }

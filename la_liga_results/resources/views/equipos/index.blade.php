@@ -1,5 +1,4 @@
 @extends('layout')
-
 @section('content')
 <style>
   .uper {
@@ -31,7 +30,7 @@
         @foreach($equipos as $equipo)
         <tr>
             <td>{{$equipo->id}}</td>
-            <td>{{$equipo->Nombre}}</td>
+            <td><a href="{{ route( 'equipos.match', $equipo->Nombre ) }}">{{$equipo->Nombre}}</a></td>
             <td>{{$equipo->Latitud}}</td>
             <td>{{$equipo->Longitud}}</td>
             <td><a href="{{ route('equipos.edit',$equipo->Nombre)}}" class="btn btn-primary">Editar</a></td>
