@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::resource('partidos', 'PartidosController');
 Route::resource('equipos', 'EquiposController');
+Route::resource('posiciones', 'PosicionesController');
 
 // ==> Enruto métodos especificos. 
 

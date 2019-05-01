@@ -65,7 +65,8 @@ class EquiposController extends Controller
      */
     public function show($id)
     {
-        //
+        $equipo = Equipo::find($id);
+        return view('equipos.show', compact('equipo'));
     }
 
     /**
