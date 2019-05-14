@@ -16,4 +16,12 @@ class Partido extends Model
         'GolesLocal',
         'GolesVisita'
       ];
+
+
+    public static function PJornada($id){
+      $jornada = Partido::where('Jornada', '=', $id) -> get();
+      return $jornada;
+    }
+
+
 }

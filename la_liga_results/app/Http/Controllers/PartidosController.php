@@ -129,4 +129,21 @@ class PartidosController extends Controller
         $partido->delete();
         return redirect('/partidos')->with('success', 'Partido eliminado correctamente');
     }
+
+
+    /**
+     * Toma los partidos de la jornada.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    
+    public function PpJornada($id = 1){
+        $partidos = Partido :: PJornada($id);
+        return view( 'partidos.jornada', compact('partidos') )
+                    ->with('jornada', $id);
+    }
+
+
+
 }

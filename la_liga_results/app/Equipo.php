@@ -22,4 +22,7 @@ class Equipo extends Model
         $visita = $this->hasMany('App\Partido','Visita');
         return  $local->union($visita)->orderBy('Jornada','ASC');
       }
+
+
+      
 }

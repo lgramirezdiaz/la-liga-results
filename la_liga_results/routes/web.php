@@ -27,3 +27,7 @@ Route::get('equipos/partidos/{name}', [
     'as' => 'equipos.match', 'uses' => 'EquiposController@showMatches'
 ]);
 
+Route::get('partidos/jornada/{id?}', [
+    'as' => 'partidos.jornada', 'uses' => 'PartidosController@PpJornada'
+]);
+
