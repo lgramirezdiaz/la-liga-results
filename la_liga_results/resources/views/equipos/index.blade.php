@@ -30,7 +30,11 @@
         @foreach($equipos as $equipo)
         <tr>
             <td>{{$equipo->id}}</td>
-            <td><a href="{{ route( 'equipos.match', $equipo->Nombre ) }}">{{$equipo->Nombre}}</a></td>
+            <td>
+              <?php $ImagePath = App\Equipo::escudo($equipo->Nombre)?>
+              <img src = {{ URL::asset("$ImagePath") }} />
+              <a href="{{ route( 'equipos.match', $equipo->Nombre ) }}">{{$equipo->Nombre}}</a>  
+            </td>
             <td>{{$equipo->Latitud}}</td>
             <td>{{$equipo->Longitud}}</td>
             <td><a href="{{ route('equipos.edit',$equipo->Nombre)}}" class="btn btn-primary">Editar</a></td>

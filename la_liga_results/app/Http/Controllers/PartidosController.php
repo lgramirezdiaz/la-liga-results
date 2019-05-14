@@ -138,12 +138,19 @@ class PartidosController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function PpJornada($id = 1){
+    public function Jornada($id = 1){
         $partidos = Partido :: PJornada($id);
         return view( 'partidos.jornada', compact('partidos') )
                     ->with('jornada', $id);
     }
 
+
+    public function datosJornadas($id){
+        $partidos = Partido :: PJornada($id);
+        return $partidos;
+
+
+    }
 
 
 }

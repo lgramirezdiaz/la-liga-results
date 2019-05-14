@@ -1,5 +1,4 @@
 @extends('layout')
-
 @section('content')
 <style>
   .uper {
@@ -34,7 +33,11 @@
         @foreach($posiciones as $posicion)
         <tr>
             <td>{{$i}}</td>
-            <td><a href="{{ route('equipos.show',$posicion->Equipo)}}">{{$posicion->Equipo}}</a></td>
+            <td>
+              <?php $ImagePath = App\Equipo::escudo($posicion->Equipo)?>
+              <img src = {{ URL::asset("$ImagePath") }} width="20" height="20" />
+              <a href="{{ route('equipos.show', $posicion->Equipo)}}">{{$posicion->Equipo}}</a>       
+            </td>
             <td>{{$posicion->PJ}}</td>
             <td>{{$posicion->PG}}</td>
             <td>{{$posicion->PE}}</td>
