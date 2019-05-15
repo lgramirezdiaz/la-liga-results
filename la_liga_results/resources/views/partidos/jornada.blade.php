@@ -8,7 +8,21 @@
         <table class="table table-striped" style="width: 75%">
             <thead class="thead-light">
                 <tr>
-                    <td colspan="6" align="center"><strong>Jornada {{$jornada}}</strong></td>
+                    <td colspan="6" align="center">
+                        @if($jornada > 1)
+                            <?php 
+                            $anterior = $jornada - 1;
+                            echo "<a href='/partidos/jornada/$anterior'><i class='fas fa-chevron-circle-left'></i></a>"; 
+                            ?>
+                        @endif
+                        <strong>&nbsp;&nbsp;&nbsp;Jornada {{$jornada}}&nbsp;&nbsp;&nbsp;</strong>
+                        @if($jornada < 38)
+                            <?php 
+                            $siguiente = $jornada + 1;
+                            echo "<a href='/partidos/jornada/$siguiente'><i class='fas fa-chevron-circle-right'></i></a>"; 
+                            ?>
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <th>Fecha</th>
