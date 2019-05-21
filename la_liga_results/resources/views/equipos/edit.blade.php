@@ -9,9 +9,9 @@
 <title>Editar Equipo</title>
 <div class="card uper">
   <div class="card-header">
-    Editar Partido
+    Editar equipo
   </div>
-  <div class="card-body">
+  <div class="card-body" style="width: 50%">
     @if ($errors->any())
       <div class="alert alert-danger">
         <ul>
@@ -21,7 +21,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('equipos.update', $equipo->Nombre) }}">
+      <form method="post" action="{{ route('equipos.update', $equipo->Nombre) }}" style="width: 50% ">
         @method('PATCH')
         @csrf
         <div class="form-group">

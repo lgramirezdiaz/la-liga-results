@@ -23,8 +23,7 @@
 
 <script>
         $(function() {
-              $('#tablePositions').DataTable({
-                
+              $('#tablePositions').DataTable({            
               language : {
                 "sProcessing":     "Procesando...",
                 "sLengthMenu":     "Mostrar _MENU_ registros",

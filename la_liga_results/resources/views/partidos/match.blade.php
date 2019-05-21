@@ -1,15 +1,13 @@
 @extends('layout')
 @section('content')
 
-<script src="{{ URL::asset('js/partidosJS/match.js') }}"></script>
 <script src="https://unpkg.com/ag-grid-enterprise@20.2.0/dist/ag-grid-enterprise.min.js"></script>
-
+<link rel="stylesheet" href="{{asset('css/default.css')}}">
 <title> Partidos específicos </title>
-<!--
-<table class="table table-striped">
+<table id="mytable" class="table table-striped table-sm">
     <thead class="thead-light">
         <tr>
-            <td colspan="6" align="center"><strong>Partidos</strong></td>
+            <td colspan="6" align="center"><strong>Partidos del Equipo</strong></td>
         </tr>
         <tr>
             <th>Jornada</th>
@@ -18,38 +16,49 @@
             <th>Visita</th>
             <th>GolesLocal</th>
             <th>GolesVisita</th>
-
         </tr>
     </thead>
-    <tbody>
-        @foreach($partidos as $partido)
-            <tr>
-                <td>{{$partido -> Jornada}}</td>
-                <td>{{$partido -> Fecha}}</td>
-                <td>{{$partido -> Local}}</td>
-                <td>{{$partido -> Visita}}</td>
-                <td>{{$partido -> GolesLocal}}</td>
-                <td>{{$partido -> GolesVisita}}</td>
-            </tr>
-    
-        @endforeach
-    
-    </tbody>
-    <tfoot></tfoot>
 </table>
--->
 
-<div id="myGrid" style="height: 750px;" class="ag-theme-material"></div>
-<div class="row">
-    <div class = "col-md-12">
-        <div id="myGrid" style="height: 100%;" class="ag-theme-material"></div>
-    </div>
-</div>
 <script>
-    rowsData = '{!! $partidos !!}';
-    initialize();
+$(document).ready(function() {
+  $('#mytable').DataTable({
+      language : {
+        "sProcessing":     "Procesando...",
+        "sLengthMenu":     "Mostrar _MENU_ registros",
+        "sZeroRecords":    "No se encontraron resultados",
+        "sEmptyTable":     "Ningún dato disponible en esta tabla",
+        "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+        "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+        "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+        "sInfoPostFix":    "",
+        "sSearch":         "Buscar:",
+        "sUrl":            "",
+        "sInfoThousands":  ",",
+        "sLoadingRecords": "Cargando...",
+        "oPaginate": {
+            "sFirst":    "Primero",
+            "sLast":     "Último",
+            "sNext":     "Siguiente",
+            "sPrevious": "Anterior"
+        },
+        "oAria": {
+            "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+        }
+      },
+      processing: true,
+      serverSide: true,
+      ajax: "{{ url('partidos/all') }}",
+      columns: [
+              { data: 'Jornada', name: 'Jornada' },
+              { data: 'Fecha', name: 'Fecha' },
+              { data: 'Local', name: 'Local' },
+              { data: 'Visita', name: 'Visita' },
+              { data: 'GolesLocal', name: 'GolesLocal' },
+              { data: 'GolesVisita', name: 'GolesVisita' }
+       ]
+    });
+});
 </script>
-
-
-
 @endsection
