@@ -148,8 +148,6 @@ class PartidosController extends Controller
     public function datosJornadas($id){
         $partidos = Partido :: PJornada($id);
         return $partidos;
-
-
     }
 
 
