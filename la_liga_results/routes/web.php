@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::resource('partidos', 'PartidosController');
 Route::resource('equipos', 'EquiposController');
 Route::resource('posiciones', 'PosicionesController');
+Route::resource('laliga', 'HomeController');
 
 // ==> Enruto métodos especificos. 
 // ==> Esta ruta no retorna vista, unicamente un json plano.

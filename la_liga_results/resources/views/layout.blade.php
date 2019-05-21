@@ -42,9 +42,11 @@
           <a class="nav-link" href="/posiciones/">Posiciones <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/partidos/">Partidos</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/partidos/jornada/1">Jornadas</a>
         </li>
-
       </ul>
     </div>
   </nav>
