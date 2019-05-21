@@ -55,8 +55,13 @@
 </script>
 
 <div class="card uper">
-  <div class="card-header">
-    Información del Equipo
+  <div class="card-header" style="position: relative;">
+    <form action="{{ route('equipos.match', $equipo->Nombre) }}" method="get">
+      <button class="btn btn-info" type="submit" style="position: absolute; right: 15px; bottom: 5px;">
+        Ver Partidos
+      </button>
+    </form>
+    Información del Equipo      
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -69,9 +74,8 @@
       </div><br />
     @endif
         <div class="form-group">
-          <label class="form-control" name="nombre" readonly>{{ $equipo->Nombre }}</label>
+          <label class="form-control" name="nombre" readonly>{{ $equipo->Nombre }}
         </div>
-         
         <div id="map" class="form-group">Mapa</div>           
   </div>
 </div>
