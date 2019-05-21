@@ -27,7 +27,6 @@
 
   <!-- -->
 
-
 </head>
 <body>
   <!-- Inicio del navbar -->
