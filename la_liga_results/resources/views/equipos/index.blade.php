@@ -12,13 +12,13 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
-  <form action="{{ route('equipos.create')}}" method="get">
+    <!--  <form action="{{ route('equipos.create')}}" method="get">
         @csrf
-        <button class="btn btn-info" type="submit">Agregar</button>
-      </form>
+        <button class="btn btn-info btn-sm" type="submit">Agregar</button>
+      </form> -->
   <table class="table table-striped">
     <thead>
-        <tr>
+        <tr align="center">
           <td>Id</td>
           <td>Nombre</td>
           <td>Latitud</td>
@@ -28,7 +28,7 @@
     </thead>
     <tbody>
         @foreach($equipos as $equipo)
-        <tr>
+        <tr align="center">
             <td>{{$equipo->id}}</td>
             <td>
               <?php $ImagePath = App\Equipo::escudo($equipo->Nombre)?>
@@ -37,12 +37,12 @@
             </td>
             <td>{{$equipo->Latitud}}</td>
             <td>{{$equipo->Longitud}}</td>
-            <td><a href="{{ route('equipos.edit',$equipo->Nombre)}}" class="btn btn-primary">Editar</a></td>
+            <td><a href="{{ route('equipos.edit',$equipo->Nombre)}}" class="btn btn-primary btn-sm">Editar</a></td>
             <td>
                 <form action="{{ route('equipos.destroy', $equipo->Nombre)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Eliminar</button>
+                  <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
                 </form>
             </td>
         </tr>
