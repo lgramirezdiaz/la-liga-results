@@ -7,16 +7,11 @@
 </style>
 <title>Equipos</title>
 <div class="uper">
-  @if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}  
-    </div><br />
-  @endif
     <!--  <form action="{{ route('equipos.create')}}" method="get">
         @csrf
         <button class="btn btn-info btn-sm" type="submit">Agregar</button>
       </form> -->
-  <table class="table table-striped">
+  <table class="table table-striped table-sm">
     <thead>
         <tr align="center">
           <td>Id</td>
@@ -49,6 +44,11 @@
         @endforeach
     </tbody>
   </table>
+  @if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div><br />
+  @endif
 <div>
       
 @endsection

@@ -1,19 +1,12 @@
 @extends('layout')
 @section('content')
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
+
+<link rel="stylesheet" href="{{asset('css/default.css')}}">
 <title>Tabla de Posiciones</title>
 <?php $i = 1; ?>
-<div class="uper">
-  @if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}  
-    </div><br />
-  @endif
-  <table class="table table-striped">
+  <br>
+  <div class="table-responsive">
+  <table class="table table-striped table-sm">
     <thead>
         <tr>
           <td>#</td>
@@ -52,6 +45,6 @@
         @endforeach
     </tbody>
   </table>
-<div>
-      
+  </div>
+<div>      
 @endsection

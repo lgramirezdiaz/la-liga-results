@@ -22,13 +22,16 @@ Route::resource('equipos', 'EquiposController');
 Route::resource('posiciones', 'PosicionesController');
 
 // ==> Enruto métodos especificos. 
+// ==> Esta ruta no retorna vista, unicamente un json plano.
+Route::get('partidos/all', 'PartidosController@AllMatches');
 
+// ==> Estas rutas si retornan vistas
 Route::get('equipos/partidos/{name}', [
     'as' => 'equipos.match', 'uses' => 'EquiposController@showMatches'
 ]);
 
-//Route::get('/partidos/jornada', 'PartidosController@Jornada');
-
 Route::get('partidos/jornada/{id?}', [
     'as' => 'partidos.jornada', 'uses' => 'PartidosController@Jornada'
 ]);
+
+

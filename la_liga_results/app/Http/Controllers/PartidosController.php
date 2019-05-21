@@ -15,9 +15,9 @@ class PartidosController extends Controller
      */
     public function index()
     {
-        $partidos = Partido::all();
-        return view('partidos.index', compact('partidos'));
+        return view('partidos.index');
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -66,9 +66,9 @@ class PartidosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return datatables()->of( Partido::all() )->toJson();
     }
 
     /**
@@ -144,11 +144,13 @@ class PartidosController extends Controller
                     ->with('jornada', $id);
     }
 
-
     public function datosJornadas($id){
         $partidos = Partido :: PJornada($id);
         return $partidos;
     }
 
+    public function allMatches(){
+        return datatables()->of( Partido::all() )->toJson(); 
+    }
 
 }

@@ -1,14 +1,16 @@
 @extends('layout')
 @section('content')
 
+<link rel="stylesheet" href="{{asset('css/default.css')}}">
 <title> Jornada {{$jornada}} </title>
-
+<br><br>
 <div class="row" align="center">
     <div class="col-md-12">
-        <table class="table table-striped" style="width: 75%">
-            <thead class="thead-light">
-                <tr>
-                    <td colspan="6" align="center">
+        <table class="table table-hover table-sm" style="width: 75%">   
+            <thead class="thead-dark">
+            <tr>
+                <td colspan="6" align="center">
+                    <h5>
                         @if($jornada > 1)
                             <?php 
                             $anterior = $jornada - 1;
@@ -22,6 +24,7 @@
                             echo "<a href='/partidos/jornada/$siguiente'><i class='fas fa-chevron-circle-right'></i></a>"; 
                             ?>
                         @endif
+                        </h5>
                     </td>
                 </tr>
                 <tr>
@@ -29,7 +32,6 @@
                     <th>Local</th>
                     <th>Resultado</th>
                     <th>Visita</th>
-    
                 </tr>
             </thead>
             <tbody>
@@ -48,9 +50,7 @@
                             {{$jornada -> Visita}} 
                         </td>          
                     </tr>
-            
-                @endforeach
-            
+                @endforeach           
             </tbody>
             <tfoot></tfoot>
         </table>
