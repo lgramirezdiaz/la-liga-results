@@ -4,10 +4,11 @@
 <script src="https://unpkg.com/ag-grid-enterprise@20.2.0/dist/ag-grid-enterprise.min.js"></script>
 <link rel="stylesheet" href="{{asset('css/default.css')}}">
 <title> Partidos específicos </title>
+<br>
 <table id="mytable" class="table table-striped table-sm">
     <thead class="thead-light">
         <tr>
-            <td colspan="6" align="center"><strong>Partidos del Equipo</strong></td>
+            <td colspan="6" align="center"><strong>Partidos del Equipo: {{$equipo}}</strong></td>
         </tr>
         <tr>
             <th>Jornada</th>
@@ -19,9 +20,9 @@
         </tr>
     </thead>
 </table>
-
 <script>
 $(document).ready(function() {
+  let equipo = '{!!$equipo!!}';
   $('#mytable').DataTable({
       language : {
         "sProcessing":     "Procesando...",
@@ -49,7 +50,7 @@ $(document).ready(function() {
       },
       processing: true,
       serverSide: true,
-      ajax: "{{ url('partidos/all') }}",
+      ajax: `{{ url('partidos/equipo/${equipo}') }}`,
       columns: [
               { data: 'Jornada', name: 'Jornada' },
               { data: 'Fecha', name: 'Fecha' },

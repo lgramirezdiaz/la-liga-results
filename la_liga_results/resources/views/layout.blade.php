@@ -38,7 +38,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/posiciones/">Posiciones <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Posiciones <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/partidos/">Partidos</a>

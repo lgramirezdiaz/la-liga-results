@@ -2,9 +2,10 @@
 @section('content')
 
 
-<script type="text/javascript" src="{{ asset("js/aux_map_script.js") }}"></script>
+<script type="text/javascript" src="{{ asset('js/aux_map_script.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc7e2Cp2CI641soWOG4eWJN_iuB69yAhY&callback=initMap" async defer></script>
 <link rel="stylesheet" href="{{ asset('css/map.css')}}">
+<link rel="stylesheet" href="{{ asset('css/default.css')}}">
 <br>
 <div style="align:center;">
   <h3>La Liga</h3>
@@ -14,9 +15,7 @@
 
 <script>
   var map;
-  var equipos = {
-    !!$json!!
-  };
+  var equipos = {!!$json!!};
 
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -24,8 +23,9 @@
         lat: 36.127123,
         lng: -5.343804
       },
-      zoom: 5
+      zoom: 4
     });
+
     cargar_markers()
   }
 

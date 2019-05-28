@@ -98,7 +98,7 @@ class EquiposController extends Controller
             'longitud' => 'required',
           ]);
 
-          $equipo = Equipo::find($Nombre);
+            $equipo = Equipo::find($Nombre);
            // $equipo->Nombre = $request->get('nombre');
             $equipo->Latitud= $request->get('latitud');
             $equipo->Longitud= $request->get('longitud');
@@ -129,11 +129,23 @@ class EquiposController extends Controller
      * $name is de full name of the team.
      * 
      */
-    
+
     public function showMatches($name){
         // Esta funcion recibe el nombre del equipo y extrae todos los partidos del equipo.
-        $partidos =  Equipo :: find($name) -> partidos;
-        return view ( 'partidos.match', compact('partidos') );
-
+        $partidos = Equipo :: find($name) -> partidos;
+        return datatables()->of($partidos)->toJson(); 
     }
+
+    /**
+     * 
+     * Funcion utilizada únicamente para retornar la vista.
+     * 
+     */
+
+    public function MatchesView($name){
+        $equipo = $name;
+        return view ('partidos.match', compact('equipo')); 
+    }
+
+
 }

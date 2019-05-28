@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'as' => 'posiciones.index', 'uses' => 'PosicionesController@index'
+]);
+
 
 // ==> Utilizo resource para que el me realice los métodos básicos CRUD. 
 
@@ -24,11 +25,13 @@ Route::resource('laliga', 'HomeController');
 
 // ==> Enruto métodos especificos. 
 // ==> Esta ruta no retorna vista, unicamente un json plano.
+
+Route::get('partidos/equipo/{name}', 'EquiposController@showMatches');
 Route::get('partidos/all', 'PartidosController@AllMatches');
 
 // ==> Estas rutas si retornan vistas
 Route::get('equipos/partidos/{name}', [
-    'as' => 'equipos.match', 'uses' => 'EquiposController@showMatches'
+    'as' => 'equipos.match', 'uses' => 'EquiposController@MatchesView'
 ]);
 
 Route::get('partidos/jornada/{id?}', [

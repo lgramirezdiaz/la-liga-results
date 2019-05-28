@@ -22,6 +22,10 @@ class Partido extends Model
       $jornada = Partido::where('Jornada', '=', $id) -> get();
       return $jornada;
     }
+    public function Local(){
+      $local = $this->hasOne('App\Partido','Local');
+      return $local;
 
+    }
 
 }
