@@ -28,7 +28,7 @@
   <!-- -->
 <!-- Inicio del navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="{{ route('laliga.index') }}">
     <img src="{{asset('laliga_logo.png')}}" width="35" height="35" class="d-inline-block align-top" alt="">
     La Liga
   </a>
