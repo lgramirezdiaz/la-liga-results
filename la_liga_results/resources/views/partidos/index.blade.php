@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<link rel="stylesheet" href="{{asset('css/default.css')}}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <title>Partidos</title>
 <br><br>
@@ -8,12 +9,13 @@
     <table id="tablePositions" class="table table-striped table-sm">
       <thead>
           <tr>
-            <td>Jornada</td>
-            <td>Fecha</td>
-            <td>Local</td>
-            <td>Visita</td>
-            <td>Goles Local</td>
-            <td>Goles Visita</td>
+            <th>Jornada</th>
+            <th>Fecha</th>
+            <th>Local</th>
+            <td>Visita</th>
+            <th>Goles Local</th>
+            <th>Goles Visita</th>
+            <th>Mapa</th>
           </tr>
       </thead>
     </table>
@@ -56,8 +58,11 @@
                       { data: 'Local', name: 'Local' },
                       { data: 'Visita', name: 'Visita' },
                       { data: 'GolesLocal', name: 'GolesLocal' },
-                      { data: 'GolesVisita', name: 'GolesVisita' }
-                      { data: 'GolesVisita', name: 'GolesVisita' }
+                      { data: 'GolesVisita', name: 'GolesVisita' },
+                      { data: 'id', name: 'Mapa', render:function(data, type, row){
+                           return "<a href='/partidos/encuentro_mapa/"+ row.id +"'>" +"<i class='fas fa-map-marked-alt'>"+ "</a>"
+                          } 
+                      },
                    ]
             });
          });
