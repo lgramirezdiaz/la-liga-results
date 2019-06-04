@@ -14,8 +14,8 @@
         padding: 0;
       }*/
 </style>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOJbu3uDOvYmkazk3onNIYxvFKn_C3eo4"></script>
+<link rel="stylesheet" href="{{asset('css/default.css')}}">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_WJCl5f7CdRjy8U0DTdvsfEDVjOioS5w"></script>
 <script>
       function initialize() {
         var pais = { lat: {{ $equipo->Latitud }}, lng: {{ $equipo->Longitud }} };  

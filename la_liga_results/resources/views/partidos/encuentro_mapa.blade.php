@@ -1,11 +1,6 @@
 @extends('layout')
-
 @section('content')
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
+<link rel="stylesheet" href="{{asset('css/default.css')}}">
 <?php 
     $partido = $info['partido'];
     $local = $info['local'];

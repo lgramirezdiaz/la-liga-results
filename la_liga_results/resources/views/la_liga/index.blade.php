@@ -3,7 +3,7 @@
 
 
 <script type="text/javascript" src="{{ asset('js/aux_map_script.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc7e2Cp2CI641soWOG4eWJN_iuB69yAhY&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_WJCl5f7CdRjy8U0DTdvsfEDVjOioS5w&callback=initMap" async defer></script>
 <link rel="stylesheet" href="{{ asset('css/map.css')}}">
 <link rel="stylesheet" href="{{ asset('css/default.css')}}">
 <br>
