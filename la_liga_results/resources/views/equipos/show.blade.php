@@ -1,13 +1,6 @@
 @extends('layout')
-
 @section('content')
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
 <title>{{ $equipo->Nombre }}</title>
-
 <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -57,7 +50,7 @@
 <div class="card uper">
   <div class="card-header" style="position: relative;">
     <form action="{{ route('equipos.match', $equipo->Nombre) }}" method="get">
-      <button class="btn btn-info" type="submit" style="position: absolute; right: 15px; bottom: 5px;">
+      <button class="btn btn-info btn-sm" type="submit" style="position: absolute; right: 15px; bottom: 5px;">
         Ver Partidos
       </button>
     </form>

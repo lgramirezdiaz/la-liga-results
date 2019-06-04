@@ -133,7 +133,9 @@ class EquiposController extends Controller
     public function showMatches($name){
         // Esta funcion recibe el nombre del equipo y extrae todos los partidos del equipo.
         $partidos = Equipo :: find($name) -> partidos;
-        return datatables()->of($partidos)->toJson(); 
+        return datatables() 
+                        -> of($partidos)
+                        -> toJson();          
     }
 
     /**

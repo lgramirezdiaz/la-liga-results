@@ -17,6 +17,7 @@
             <th>Visita</th>
             <th>GolesLocal</th>
             <th>GolesVisita</th>
+            <th>Mapa</th>
         </tr>
     </thead>
 </table>
@@ -57,7 +58,11 @@ $(document).ready(function() {
               { data: 'Local', name: 'Local' },
               { data: 'Visita', name: 'Visita' },
               { data: 'GolesLocal', name: 'GolesLocal' },
-              { data: 'GolesVisita', name: 'GolesVisita' }
+              { data: 'GolesVisita', name: 'GolesVisita' },
+              { data: 'id', name: 'Mapa', render:function(data, type, row){
+                    return "<a href='/partidos/encuentro_mapa/"+ row.id +"'>" +"<i class='fas fa-map-marked-alt'>"+ "</a>"
+                    }
+              },
        ]
     });
 });
