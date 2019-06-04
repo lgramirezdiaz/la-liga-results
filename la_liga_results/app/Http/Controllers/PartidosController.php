@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\partido;
+use App\equipo;
+
 
 class PartidosController extends Controller
 {
@@ -151,6 +153,17 @@ class PartidosController extends Controller
 
     public function allMatches(){
         return datatables()->of( Partido::all() )->toJson(); 
+    }
+
+    public function encuentro_mapa($id){
+        $partido = Partido::find($id);
+        $local  = Equipo::find($partido->Local);
+        $visita  = Equipo::find($partido->Visita);
+        $info['partido'] = $partido;
+        $info['local'] = $local;
+        $info['visita'] = $visita;
+        //echo json_encode($info, JSON_UNESCAPED_UNICODE);
+        return view('partidos.encuentro_mapa', compact('info'));
     }
 
 }
