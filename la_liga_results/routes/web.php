@@ -38,4 +38,9 @@ Route::get('partidos/jornada/{id?}', [
     'as' => 'partidos.jornada', 'uses' => 'PartidosController@Jornada'
 ]);
 
+Route::get('partidos/encuentro_mapa/{id?}', [
+    'as' => 'partidos.encuentro_mapa', 'uses' => 'PartidosController@encuentro_mapa'
+]);
+
+
 
